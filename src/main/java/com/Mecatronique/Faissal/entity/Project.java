@@ -4,7 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
-@Document("projects")
+@Document(collation = "projects")
 public class Project {
     @Id
     private String projectID;
@@ -15,6 +15,9 @@ public class Project {
     private LocalDate startDate;
     private LocalDate endDate;
     
+    public Project() {
+    }
+
     public Project(String projectID, String projectName, String category, String description, String completion, LocalDate startDate, LocalDate endDate) {
         
         super();
