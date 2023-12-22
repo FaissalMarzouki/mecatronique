@@ -7,11 +7,14 @@ import java.util.Date;
 @Document(collection = "events")
 public class Event {
     @Id
+    //les proprietes members
     private String eventID;
     private String eventName;
     private String description;
     private Date date;
     private String location;
+    //relation de sponseur
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public Event() {
     }
     public Event(String eventID, String eventName, String description, Date date, String location) {

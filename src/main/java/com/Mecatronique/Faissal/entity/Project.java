@@ -7,6 +7,7 @@ import java.time.LocalDate;
 @Document(collation = "projects")
 public class Project {
     @Id
+    //les proprietes project
     private String projectID;
     private String projectName;
     private String category;
@@ -14,7 +15,8 @@ public class Project {
     private String completion;
     private LocalDate startDate;
     private LocalDate endDate;
-    
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public Project() {
     }
 

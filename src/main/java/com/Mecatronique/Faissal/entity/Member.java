@@ -6,13 +6,45 @@ import java.util.Date;
 @Document(collection = "members")
 public class Member {
     @Id
+    //les proprietes members
     private String memberID;
     private String firstName;
     private String lastName;
+    //filiere
+
     private String email;
     private String phone;
     private Date joinDate;
-    
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public Member(String memberID, String firstName, String lastName, String email, String phone, Date joinDate) {
         this.memberID = memberID;
         this.firstName = firstName;
