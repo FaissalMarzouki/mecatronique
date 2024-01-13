@@ -1,6 +1,7 @@
 package com.Mecatronique.Faissal.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
@@ -13,8 +14,9 @@ public class Event {
     private String description;
     private Date date;
     private String location;
-    //relation de sponseur
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @DBRef
+    private Sponsor sponsor;
+
     public Event() {
     }
     public Event(String eventID, String eventName, String description, Date date, String location) {
