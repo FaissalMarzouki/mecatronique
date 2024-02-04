@@ -3,6 +3,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Document(collation = "projects")
 public class Project {
@@ -13,16 +14,20 @@ public class Project {
     private String category;
     private String description;
     private String completion;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private Date startDate;
+    private Date endDate;
+    private String cover_image;
+    private Date time_stamp;
+	private Date modified;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public Project() {
     }
 
-    public Project(String projectID, String projectName, String category, String description, String completion, LocalDate startDate, LocalDate endDate) {
-        
-        super();
+   
+
+    public Project(String projectID, String projectName, String category, String description, String completion,
+            Date startDate, Date endDate, String cover_image, Date time_stamp, Date modified) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.category = category;
@@ -30,7 +35,13 @@ public class Project {
         this.completion = completion;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.cover_image = cover_image;
+        this.time_stamp = time_stamp;
+        this.modified = modified;
     }
+
+
+
 
     public String getProjectID() {
         return projectID;
@@ -64,19 +75,19 @@ public class Project {
         this.description = description;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
@@ -90,12 +101,36 @@ public class Project {
         this.completion = completion;
     }
 
+    public String getCover_image() {
+        return cover_image;
+    }
+    public void setCover_image(String cover_image) {
+        this.cover_image = cover_image;
+    }
+    public Date getTime_stamp() {
+        return time_stamp;
+    }
+    public void setTime_stamp(Date time_stamp) {
+        this.time_stamp = time_stamp;
+    }
+    public Date getModified() {
+        return modified;
+    }
+    public void setModified(Date modified) {
+        this.modified = modified;
+    }
+
+
+
     @Override
     public String toString() {
         return "Project [projectID=" + projectID + ", projectName=" + projectName + ", category=" + category
                 + ", description=" + description + ", completion=" + completion + ", startDate=" + startDate
-                + ", endDate=" + endDate + "]";
+                + ", endDate=" + endDate + ", cover_image=" + cover_image + ", time_stamp=" + time_stamp + ", modified="
+                + modified + "]";
     }
+
+   
         
 }
 

@@ -14,18 +14,26 @@ public class Event {
     private String description;
     private Date date;
     private String location;
+    private Date time_stamp;
+    private String cover_image;
     @DBRef
     private Sponsor sponsor;
 
     public Event() {
     }
-    public Event(String eventID, String eventName, String description, Date date, String location) {
+    
+    public Event(String eventID, String eventName, String description, Date date, String location, Date time_stamp,
+            String cover_image, Sponsor sponsor) {
         this.eventID = eventID;
         this.eventName = eventName;
         this.description = description;
         this.date = date;
         this.location = location;
+        this.time_stamp = time_stamp;
+        this.cover_image = cover_image;
+        this.sponsor = sponsor;
     }
+
     public String getEventID() {
         return eventID;
     }
@@ -56,11 +64,32 @@ public class Event {
     public void setLocation(String location) {
         this.location = location;
     }
+    public Date getTime_stamp() {
+        return time_stamp;
+    }
+    public void setTime_stamp(Date time_stamp) {
+        this.time_stamp = time_stamp;
+    }
+    public String getCover_image() {
+        return cover_image;
+    }
+    public void setCover_image(String cover_image) {
+        this.cover_image = cover_image;
+    }
+    public Sponsor getSponsor() {
+        return sponsor;
+    }
+    public void setSponsor(Sponsor sponsor) {
+        this.sponsor = sponsor;
+    }
+
     @Override
     public String toString() {
         return "Event [eventID=" + eventID + ", eventName=" + eventName + ", description=" + description + ", date="
-                + date + ", location=" + location + "]";
+                + date + ", location=" + location + ", time_stamp=" + time_stamp + ", cover_image=" + cover_image
+                + ", sponsor=" + sponsor + "]";
     }
-
+    
+    
 }
 
