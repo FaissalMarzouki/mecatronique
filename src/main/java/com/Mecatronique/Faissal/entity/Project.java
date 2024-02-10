@@ -1,5 +1,6 @@
 package com.Mecatronique.Faissal.entity;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -7,8 +8,7 @@ import java.util.Date;
 
 @Document(collation = "projects")
 public class Project {
-    @Id
-    //les proprietes project
+    @Id    
     private String projectID;
     private String projectName;
     private String category;
@@ -16,7 +16,8 @@ public class Project {
     private String completion;
     private Date startDate;
     private Date endDate;
-    private String cover_image;
+     @DBRef
+    private Image image;
     private Date time_stamp;
 	private Date modified;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +28,7 @@ public class Project {
    
 
     public Project(String projectID, String projectName, String category, String description, String completion,
-            Date startDate, Date endDate, String cover_image, Date time_stamp, Date modified) {
+            Date startDate, Date endDate, Image image, Date time_stamp, Date modified) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.category = category;
@@ -35,7 +36,7 @@ public class Project {
         this.completion = completion;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.cover_image = cover_image;
+        this.image = image;
         this.time_stamp = time_stamp;
         this.modified = modified;
     }
@@ -101,11 +102,11 @@ public class Project {
         this.completion = completion;
     }
 
-    public String getCover_image() {
-        return cover_image;
+    public Image getImage() {
+        return image;
     }
-    public void setCover_image(String cover_image) {
-        this.cover_image = cover_image;
+    public void setImage(Image image) {
+        this.image = image;
     }
     public Date getTime_stamp() {
         return time_stamp;
@@ -126,7 +127,7 @@ public class Project {
     public String toString() {
         return "Project [projectID=" + projectID + ", projectName=" + projectName + ", category=" + category
                 + ", description=" + description + ", completion=" + completion + ", startDate=" + startDate
-                + ", endDate=" + endDate + ", cover_image=" + cover_image + ", time_stamp=" + time_stamp + ", modified="
+                + ", endDate=" + endDate + ", image=" + image + ", time_stamp=" + time_stamp + ", modified="
                 + modified + "]";
     }
 

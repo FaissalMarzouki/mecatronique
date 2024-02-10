@@ -5,9 +5,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 @Document(collection = "members")
-public class Member extends User{
+public class Member{
     @Id
-    //les proprietes members
     private String memberID;
     
     private String sector;

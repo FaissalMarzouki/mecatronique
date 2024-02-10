@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Competitions")
 public class Competition {
     @Id
-	private int idCompetition;
+	private String idCompetition;
 	private int title;
 	private int description;
 	private String cover_image;
@@ -16,7 +16,7 @@ public class Competition {
 	private Date last_modified;
     public Competition() {
     }
-    public Competition(int idCompetition, int title, int description, String cover_image, Date date, Date time_stamp,
+    public Competition(String idCompetition, int title, int description, String cover_image, Date date, Date time_stamp,
             Date last_modified) {
         this.idCompetition = idCompetition;
         this.title = title;
@@ -26,10 +26,10 @@ public class Competition {
         this.time_stamp = time_stamp;
         this.last_modified = last_modified;
     }
-    public int getIdCompetition() {
+    public String getIdCompetition() {
         return idCompetition;
     }
-    public void setIdCompetition(int idCompetition) {
+    public void setIdCompetition(String idCompetition) {
         this.idCompetition = idCompetition;
     }
     public int getTitle() {
