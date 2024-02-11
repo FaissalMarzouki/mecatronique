@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
+import java.util.List;
 
 @Document(collection = "events")
 public class Event {
@@ -15,22 +16,21 @@ public class Event {
     private Date date;
     private String location;
     private Date time_stamp;
-    private String cover_image;
-    @DBRef
+    private List<Image> image;
     private Sponsor sponsor;
 
     public Event() {
     }
     
     public Event(String eventID, String eventName, String description, Date date, String location, Date time_stamp,
-            String cover_image, Sponsor sponsor) {
+             List<Image> image, Sponsor sponsor) {
         this.eventID = eventID;
         this.eventName = eventName;
         this.description = description;
         this.date = date;
         this.location = location;
         this.time_stamp = time_stamp;
-        this.cover_image = cover_image;
+        this.image = image;
         this.sponsor = sponsor;
     }
 
@@ -70,11 +70,11 @@ public class Event {
     public void setTime_stamp(Date time_stamp) {
         this.time_stamp = time_stamp;
     }
-    public String getCover_image() {
-        return cover_image;
+    public List<Image> getimage() {
+        return image;
     }
-    public void setCover_image(String cover_image) {
-        this.cover_image = cover_image;
+    public void setimage(List<Image> image) {
+        this.image = image;
     }
     public Sponsor getSponsor() {
         return sponsor;
@@ -86,10 +86,11 @@ public class Event {
     @Override
     public String toString() {
         return "Event [eventID=" + eventID + ", eventName=" + eventName + ", description=" + description + ", date="
-                + date + ", location=" + location + ", time_stamp=" + time_stamp + ", cover_image=" + cover_image
-                + ", sponsor=" + sponsor + "]";
+                + date + ", location=" + location + ", time_stamp=" + time_stamp + ", image=" + image + ", sponsor="
+                + sponsor + "]";
     }
-    
+
+
     
 }
 

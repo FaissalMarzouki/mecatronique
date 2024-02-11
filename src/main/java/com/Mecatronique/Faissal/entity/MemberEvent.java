@@ -9,11 +9,7 @@ import java.util.Date;
 public class MemberEvent {
     @Id
     private String memberEventID;
-
-    @DBRef
     private Member member;
-
-    @DBRef
     private Event event;
 
     private String attendanceStatus;

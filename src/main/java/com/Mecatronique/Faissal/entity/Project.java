@@ -1,12 +1,11 @@
 package com.Mecatronique.Faissal.entity;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
-@Document(collation = "projects")
+@Document(collection = "projects")
 public class Project {
     @Id    
     private String projectID;
@@ -16,8 +15,7 @@ public class Project {
     private String completion;
     private Date startDate;
     private Date endDate;
-     @DBRef
-    private Image image;
+    private List<Image> image;
     private Date time_stamp;
 	private Date modified;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -28,7 +26,7 @@ public class Project {
    
 
     public Project(String projectID, String projectName, String category, String description, String completion,
-            Date startDate, Date endDate, Image image, Date time_stamp, Date modified) {
+            Date startDate, Date endDate, List<Image> image, Date time_stamp, Date modified) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.category = category;
@@ -102,10 +100,10 @@ public class Project {
         this.completion = completion;
     }
 
-    public Image getImage() {
+    public List<Image> getImage() {
         return image;
     }
-    public void setImage(Image image) {
+    public void setImage(List<Image> image) {
         this.image = image;
     }
     public Date getTime_stamp() {
