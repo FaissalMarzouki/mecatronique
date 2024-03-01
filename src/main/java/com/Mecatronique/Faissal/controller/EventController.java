@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/events")
+@RequestMapping("/api/v1/events")
 public class EventController {
 
     private final EventRepository eventRepository;
@@ -74,7 +74,7 @@ public class EventController {
     // Endpoint to update an existing sponsor
     @PutMapping("/sponsors/updateSponsor/{sponsorId}")
     public Sponsor updateSponsor(@PathVariable String sponsorId, @RequestBody Sponsor sponsor) {
-        sponsor.setId(sponsorId);
+        sponsor.setIdSponsor(sponsorId);
         return sponsorRepository.save(sponsor);
     }
 

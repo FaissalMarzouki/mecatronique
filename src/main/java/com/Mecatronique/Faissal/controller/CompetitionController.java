@@ -12,7 +12,7 @@ import com.Mecatronique.Faissal.entity.Competition;
 import com.Mecatronique.Faissal.repository.CompetitionRepository;
 
 @RestController
-@RequestMapping("/competitions")
+@RequestMapping("/api/v1/competitions")
 public class CompetitionController {
 
     private final CompetitionRepository competitionRepository;
